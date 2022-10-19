@@ -42,7 +42,7 @@ function Home() {
               <p className="w-max text-center ">Google apps</p>
             </div>
           )}
-          {showLogos && <p className="absolute top-10">showLogos</p>}
+          <div className="pointer-events-none">{showLogos && <Logos />}</div>
         </div>
         <div
           className="relative"
