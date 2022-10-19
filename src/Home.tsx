@@ -1,9 +1,16 @@
 import { useState } from "react";
 import logo from "./images/girl.jpg";
+import Logos from "./components/Apps";
 
 function Home() {
-  const [menuHovered, setMenuHovered] = useState(false);
-  const [accountInfo, setAccountInfo] = useState(false);
+  const [menuHovered, setMenuHovered] = useState<boolean>(false);
+  const [accountInfo, setAccountInfo] = useState<boolean>(false);
+  const [showLogos, setShowLogos] = useState<boolean>(false);
+
+  const handleShowLogos = () => {
+    setMenuHovered(!menuHovered);
+    setShowLogos(!showLogos);
+  };
 
   return (
     <>
@@ -19,6 +26,7 @@ function Home() {
           className="relative"
           onMouseEnter={() => setMenuHovered(true)}
           onMouseLeave={() => setMenuHovered(false)}
+          onClick={handleShowLogos}
         >
           <span className=" w-11 h-11 hover:bg-neutral-500 rounded-full items-center flex justify-center cursor-pointer ">
             <svg
@@ -34,6 +42,7 @@ function Home() {
               <p className="w-max text-center ">Google apps</p>
             </div>
           )}
+          {showLogos && <p className="absolute top-10">showLogos</p>}
         </div>
         <div
           className="relative"
