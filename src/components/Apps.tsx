@@ -1,8 +1,5 @@
 import React from "react";
-interface Props {
-  imageLink: string;
-  imageDescription: string;
-}
+import { Props } from "./dat";
 const myData: Props[] = [
   {
     imageLink:
@@ -11,8 +8,8 @@ const myData: Props[] = [
   },
   {
     imageLink:
-      "https://www.todaysparent.com/wp-content/uploads/2017/06/Black-girls-face-discrimination-as-young-as-five-years-old-says-new-study.jpg",
-    imageDescription: "Account",
+      "https://www.transparentpng.com/thumb/google-logo/google-logo-png-icon-free-download-SUF63j.png",
+    imageDescription: "Search",
   },
   {
     imageLink:
@@ -53,14 +50,14 @@ const myData: Props[] = [
 
 const Logos = () => {
   return (
-    <div className=" absolute  top-12  ">
-      <div className="flex items-center gap-x-10  gap-y-5 flex-wrap justify-center -ml-56 bg-neutral-700 rounded-lg p-6 scroll-m-0 ">
+    <div className=" top-12  ">
+      <div className="flex items-center gap-10  flex-wrap justify-center mr-4 bg-neutral-700 rounded-lg p-6 cursor-pointer">
         {myData.map((item) => (
-          <div className="w-10">
+          <div className="w-12 ">
             <img
               src={item.imageLink}
               alt=""
-              className="object-contain h-10 rounded-full"
+              className="object-contain h-10 w-10 rounded-full"
             />
             <p className="text-center text-xs">{item.imageDescription}</p>
           </div>
