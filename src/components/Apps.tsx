@@ -1,5 +1,16 @@
 import React from "react";
 import { Props } from "./dat";
+import google from "../images/google.png";
+import maps from "../images/map.png";
+import yt from "../images/yt.png";
+import play from "../images/play.png";
+import news from "../images/news.png";
+import mail from "../images/mail.png";
+import meet from "../images/meet.png";
+import chat from "../images/chat.png";
+import contacts from "../images/contacts.png";
+import drive from "../images/drive.png";
+import calender from "../images/calender.png";
 const myData: Props[] = [
   {
     imageLink:
@@ -7,44 +18,48 @@ const myData: Props[] = [
     imageDescription: "Account",
   },
   {
-    imageLink:
-      "https://www.transparentpng.com/thumb/google-logo/google-logo-png-icon-free-download-SUF63j.png",
+    imageLink: google,
     imageDescription: "Search",
   },
   {
-    imageLink:
-      "https://www.todaysparent.com/wp-content/uploads/2017/06/Black-girls-face-discrimination-as-young-as-five-years-old-says-new-study.jpg",
-    imageDescription: "Account",
+    imageLink: maps,
+    imageDescription: "Maps",
   },
   {
-    imageLink:
-      "https://www.todaysparent.com/wp-content/uploads/2017/06/Black-girls-face-discrimination-as-young-as-five-years-old-says-new-study.jpg",
-    imageDescription: "Account",
+    imageLink: yt,
+    imageDescription: "YouTube",
   },
   {
-    imageLink:
-      "https://www.todaysparent.com/wp-content/uploads/2017/06/Black-girls-face-discrimination-as-young-as-five-years-old-says-new-study.jpg",
-    imageDescription: "Account",
+    imageLink: play,
+    imageDescription: "Play",
   },
   {
-    imageLink:
-      "https://www.todaysparent.com/wp-content/uploads/2017/06/Black-girls-face-discrimination-as-young-as-five-years-old-says-new-study.jpg",
-    imageDescription: "Account",
+    imageLink: news,
+    imageDescription: "News",
   },
   {
-    imageLink:
-      "https://www.todaysparent.com/wp-content/uploads/2017/06/Black-girls-face-discrimination-as-young-as-five-years-old-says-new-study.jpg",
-    imageDescription: "Account",
+    imageLink: mail,
+    imageDescription: "Email",
   },
   {
-    imageLink:
-      "https://www.todaysparent.com/wp-content/uploads/2017/06/Black-girls-face-discrimination-as-young-as-five-years-old-says-new-study.jpg",
-    imageDescription: "Account",
+    imageLink: meet,
+    imageDescription: "Meet",
   },
   {
-    imageLink:
-      "https://www.todaysparent.com/wp-content/uploads/2017/06/Black-girls-face-discrimination-as-young-as-five-years-old-says-new-study.jpg",
-    imageDescription: "Account",
+    imageLink: chat,
+    imageDescription: "Chat",
+  },
+  {
+    imageLink: contacts,
+    imageDescription: "Contacts",
+  },
+  {
+    imageLink: drive,
+    imageDescription: "Drive",
+  },
+  {
+    imageLink: calender,
+    imageDescription: "Calender",
   },
 ];
 
@@ -57,9 +72,9 @@ const Logos = () => {
             <img
               src={item.imageLink}
               alt=""
-              className="object-contain h-10 w-10 rounded-full"
+              className="object-contain h-12 w-12 rounded-full"
             />
-            <p className="text-center text-xs">{item.imageDescription}</p>
+            <p className="text-center text-xs mt-1">{item.imageDescription}</p>
           </div>
         ))}
       </div>
