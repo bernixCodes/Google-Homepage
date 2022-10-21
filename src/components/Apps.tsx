@@ -67,8 +67,8 @@ const Logos = () => {
   return (
     <div className=" top-12  ">
       <div className="flex items-center gap-10  flex-wrap justify-center mr-4 bg-neutral-700 rounded-lg p-6 cursor-pointer">
-        {myData.map((item) => (
-          <div className="w-12 ">
+        {myData.map((item, idx) => (
+          <div key={idx} className="w-12 ">
             <img
               src={item.imageLink}
               alt=""
