@@ -72,9 +72,11 @@ const Logos = () => {
             <img
               src={item.imageLink}
               alt=""
-              className="object-contain h-12 w-12 rounded-full"
+              className="object-contain h-12 w-15 rounded-full"
             />
-            <p className="text-center text-xs mt-1">{item.imageDescription}</p>
+            <p className="text-center text-xs mt-1 hover:scale-75">
+              {item.imageDescription}
+            </p>
           </div>
         ))}
       </div>
