@@ -1,5 +1,6 @@
 import React from "react";
 import { AiOutlineSearch } from "react-icons/ai";
+import { AiOutlinePlus } from "react-icons/ai";
 
 function Search() {
   return (
@@ -10,7 +11,7 @@ function Search() {
           height="800"
           width="1200"
           viewBox="-40.446 -22.19 350.532 133.14"
-          className="object-contain w-36 md:w-60 h-40"
+          className="object-contain w-40 md:w-60 h-40"
         >
           <path
             d="M115.39 46.71c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18c0-12.86 9.99-22.18 22.25-22.18s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44s-12.51 5.46-12.51 13.44c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z"
@@ -63,6 +64,13 @@ function Search() {
             d="M12 17c-1.38 0-2.63-.56-3.54-1.47l-1.41 1.41A6.99 6.99 0 0 0 12.01 19c3.87 0 6.98-3.14 6.98-7h-2c0 2.76-2.23 5-4.99 5z"
           />
         </svg>
+      </div>
+
+      <div className="mt-8 flex flex-col items-center gap-4  hover:bg-neutral-500 cursor-pointer p-4 rounded">
+        <span className="p-3 bg-neutral-600 rounded-full ">
+          <AiOutlinePlus className="text-xl" />
+        </span>
+        <p>Add shortcut</p>
       </div>
     </div>
   );
