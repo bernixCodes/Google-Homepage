@@ -1,8 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { AiOutlinePlus } from "react-icons/ai";
 
+interface Props {
+  name: string;
+  url: string;
+}
 function Search() {
+  const [addShortCut, setAddShortcut] = useState<boolean>(false);
+  const [name, setName] = useState<string>("");
+  const [url, setURL] = useState<string>("");
+  const [shortCuts, setShortcut] = useState<Props[]>([]);
+  console.log(shortCuts);
+
+  const handleShortCut = () => {
+    setAddShortcut(!addShortCut);
+  };
+
+  const cancelModal = () => {
+    setAddShortcut(false);
+  };
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const payload = { name, url };
+    setShortcut([...shortCuts, payload]);
+
+    setAddShortcut(false);
+  };
+
   return (
     <div className="flex flex-col items-center justify-center md:py-20 md:px-32  py-10">
       <div className="">
@@ -66,11 +91,73 @@ function Search() {
         </svg>
       </div>
 
-      <div className="mt-8 flex flex-col items-center gap-4  hover:bg-neutral-500 cursor-pointer p-4 rounded">
-        <span className="p-3 bg-neutral-600 rounded-full ">
-          <AiOutlinePlus className="text-xl" />
-        </span>
-        <p>Add shortcut</p>
+      {addShortCut && (
+        <form className="bg-neutral-700 p-5 md:w-2/6  w-full  absolute md:top-64 top-56 shadow-2xl">
+          <div>
+            <h2 className="text-xl font-medium">Add shortcut</h2>
+            <div className="mt-5 flex flex-col gap-2">
+              <p>Name</p>
+              <input
+                type={"text"}
+                onChange={(e) => setName(e.target.value)}
+                className="bg-neutral-800 p-2 rounded outline-none border-b-blue-700 focus:border-b-2"
+              />
+            </div>
+            <div className="mt-5 flex flex-col gap-2">
+              <p>URL</p>
+              <input
+                type={"text"}
+                onChange={(e) => setURL(e.target.value)}
+                className="bg-neutral-800 p-2 rounded outline-none border-b-blue-700 focus:border-b-2"
+              />
+            </div>
+            <div className="mt-10 flex items-center justify-end gap-4">
+              <button
+                onClick={cancelModal}
+                className="bg-neutral-800 b text-blue-400  py-2 px-4 rounded"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handleSubmit}
+                className="bg-neutral-600 py-2 px-4 rounded"
+              >
+                Done
+              </button>
+            </div>
+          </div>
+        </form>
+      )}
+
+      <div className="flex items-center mt-8">
+        <div className="flex items-center gap-5 flex-wrap ">
+          {shortCuts.map((item, id) => (
+            <div
+              key={id}
+              className="hover:bg-neutral-500 cursor-pointer p-4 rounded items-center"
+            >
+              <span className="flex flex-col gap-6">
+                <img
+                  src={`${item.url}/favicon.ico`}
+                  alt=""
+                  className="object-contain h-14"
+                />
+                <p>{item.name}</p>
+              </span>
+            </div>
+          ))}
+        </div>
+        <div
+          onClick={handleShortCut}
+          className=" flex flex-col items-center gap-5 hover:bg-neutral-500 cursor-pointer p-4 rounded"
+        >
+          <span className="p-3 bg-neutral-600 rounded-full w-16 h-16 flex items-center justify-center ">
+            <AiOutlinePlus className="text-xl " />
+          </span>
+          <div>
+            <p>Add shortcut</p>
+          </div>
+        </div>
       </div>
     </div>
   );
